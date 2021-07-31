@@ -1,0 +1,6 @@
+---
+layout: post
+title:  "글또 6기 다짐글"
+date:   2021-07-31 09:11:57 +0900
+categories: 글또
+---
