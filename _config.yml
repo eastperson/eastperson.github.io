@@ -58,3 +58,6 @@ theme: plainwhite
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
+
+# Analytics
+google-analytics: G-59DP1SECTE
