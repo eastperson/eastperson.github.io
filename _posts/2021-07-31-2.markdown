@@ -226,7 +226,7 @@ bundle exec jekyll serve
 
 <h3 id="deploy">배포</h3>
 <p>
-마지막으로 깃푸시를 해주면 처음에 설정했던 주소에서 확인할 수 있다. (적용되는데 몇분이 걸리는 것 같다. 원리는 잘 모르겠는데 바로 적용안되더라도 조금 기달려보자.
+마지막으로 깃푸시를 해주면 처음에 설정했던 주소에서 확인할 수 있다. (적용되는데 몇분이 걸리는 것 같다.) 원리는 잘 모르겠는데 바로 적용안되더라도 조금 기달려보자.
 </p>
 
 <h3>Reference</h3>
@@ -240,5 +240,5 @@ bundle exec jekyll serve
 <hr>
 <h4>여담</h4>
 <p>
-github.io 블로그를 만든 방법을 작성해보았다. 이후에 Google Analytics, Google Search Console을 연동했고, 이후에 SEO를 적용하려고 한다. 이 과정들을 기록하고 있다. (2021.08.07)
+github.io 블로그를 만든 방법을 작성해보았다. 이후에 Google Analytics, Google Search Console을 연동했고, 이후에 Travis CI와 SEO를 적용하려고 한다. 이 과정들을 기록하고 있다. (2021.08.07)
 </p>
