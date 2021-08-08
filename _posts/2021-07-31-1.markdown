@@ -7,7 +7,7 @@ categories: blog
 <h2>글또 6기 다짐글</h2>
 <br/>
 <p>
-<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2304f69f-d10d-414b-99e2-e8d957981ca6%2Fsymbol.png?table=block&id=096e7573-2e0f-4b2c-86d1-b42f69d09337&spaceId=601b6928-0e34-4343-9095-2e5c756903b3&width=190&userId=02ef656d-e926-4485-927c-b834f3472075&cache=v2">
+<img src="https://user-images.githubusercontent.com/66561524/128624638-d17ced6e-d103-4923-ac10-f2cfbffe8f3f.png">
 <br/><br/>
 개발자가 된 지 4개월 차. 새로운 자극점을 찾다 글또를 만나게 되었다. 개발도 분야가 있고 장르가 있다. 직업을 바꾸고 쉼 없이 공부를 해왔지만, kick-off만 있고 쉼표와 회고가 없었다. 증발해버리는 지식을 걷잡을 수가 없었고 기억에 의존한 지식은 되려 자신감을 잃었다. 알고는 있지만 아는 척 할 수 없는..? 아는 척을 해버렸다가는 큰일이라도 날 것 같았다. 이렇게 파편화되어있는 지식의 뭉치들은 오히려 내 발목을 잡을 것만 같았다.
 </p>

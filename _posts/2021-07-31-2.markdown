@@ -7,7 +7,7 @@ categories: blog
 <h2>[jekyll] Github.io 블로그 만들기</h2>
 <br/>
 <p>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/de924a74-7986-4be4-96c6-c120680571ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T222756Z&X-Amz-Expires=86400&X-Amz-Signature=c948cecdc3d03dd502ea99d940e30f92baa30fa78f4c1d5105a3012ca6e14c1c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22">
+<img src="https://user-images.githubusercontent.com/66561524/128624433-7c2702a5-5fe1-4727-ba8a-987a9d681f39.png">
 <br/><br/>
 나는 블로그를 매우 다양한 플랫폼을 사용한다. 콘텐츠 마케터 시절 네이버 View 탭에 상위 노출 전략을 사용하기 위한 네이버 블로그, 구글 SEO에 대한 커스터마이징을 비개발자도 할 수 있는 tistory, 데스크탑 앱이 있어 노트하기 편한 에버노트, 많은 글을 웹상에서 관리하기 쉬운 additor, 가장 편하게 가독성이 높은 UI를 제공해주는 notion이 있다.
 </p>
@@ -27,7 +27,7 @@ categories: blog
 <hr>
 <h3>Overview</h3>
 <p>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0faf8589-5feb-4006-9162-ae3305b7c7ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T223036Z&X-Amz-Expires=86400&X-Amz-Signature=c9a0c8bb923081025d8575192fdc757c37be28ba9373f54c0934adbac9d01cdf&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22"/>
+<img src="https://user-images.githubusercontent.com/66561524/128624493-bc7e35ee-70f7-470b-8749-889edb7d62d2.png"/>
 
 지킬의 장점은 다음과 같습니다.
 <ol>
@@ -46,8 +46,8 @@ Jekyll은 정적 사이트 빌더(Static Website Builder)이다. Github 공동 �
 <p>
 기존 리포지토리를 생성하는 방식으로 만들어준다. name은 도메인명을 정하느 것인데, 보통 github username으로 주로 설정한다.
 </p>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a41c95e9-f93d-41c3-9c80-ee2384510a29/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T223406Z&X-Amz-Expires=86400&X-Amz-Signature=e462c19bbe544864d5b3b696a9aa80f5dad9352ffb85854f92fe6c00712a0ff1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22">
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ac970c37-9b03-489d-af04-1627bdf20cbc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T223427Z&X-Amz-Expires=86400&X-Amz-Signature=b5bc05882a0c8fe0b411a00ca2245f07a557e07121eb2b033abec9f8cb8d2f10&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22"/>
+<img src="https://user-images.githubusercontent.com/66561524/128624501-7f1d47f2-9c1c-450d-a022-9f9f80f5a790.png">
+<img src="https://user-images.githubusercontent.com/66561524/128624507-abcc0742-f1ce-45d2-b860-135e52b6b45e.png"/>
 <p>
 그리고 정적 페이지를 발행하고 있는지 setting에 가서 확인하면 된다.
 </p>
@@ -92,7 +92,7 @@ bundle exec jekyll serve
 <p>
 이렇게 설치후 실행을 시켜
 </p>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/27742370-62a9-44e0-9303-c109f6f4be85/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T224027Z&X-Amz-Expires=86400&X-Amz-Signature=b77b093cd1e4eadc7eb65fba6e1c4d108af113e86bec9e59edc096d63ce5d680&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22"/>
+<img src="https://user-images.githubusercontent.com/66561524/128624515-d5b0dd64-4233-42ae-89ce-7799bacff3e8.png"/>
 <p>
 위와 같은 화면이 나타나는지 확인한다. 그리고 http://localhost:4000에서 자동으로 작성된 index를 확인할 수 있다.
 </p>
@@ -101,7 +101,7 @@ bundle exec jekyll serve
 <p>
 지킬의 정적 파일이 생성되는 원리는 다음과 같다.
 </p>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/982b00b4-12a1-4dbb-b219-09fff20b7985/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T224124Z&X-Amz-Expires=86400&X-Amz-Signature=baf5967610b2a9c8f13141df1e74b81deab66d4390ee343a0f32bd9d0963b665&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22">
+<img src="https://user-images.githubusercontent.com/66561524/128624520-6032d2bc-0067-452c-bc97-57d89b3d2938.png">
 <p>
 처음 생성된 디렉토리는 위와 같다. 여기 .gitignore를 확인해보면
 </p>
@@ -209,7 +209,7 @@ categories: {cat1} {cat2}
 </p>
 
 <p>해당 주소를 들어가서 </p>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0b7486d1-fc73-496d-a850-f279710a6ab4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210806T224457Z&X-Amz-Expires=86400&X-Amz-Signature=ef206ac920e4c5a5f6de18557a2f7c5cb461c99de1709fe9d5f32728914b641d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22">
+<img src="https://user-images.githubusercontent.com/66561524/128624526-430d96aa-5076-4483-b65a-06a0adbb24d5.png">
 
 <p>
 Download ZIP을 클릭해준다. 그리고 그 폴더에 들어가서 전체 파일을 선택한뒤 복사해서 git clone을 한 로컬 디렉토리에서 붙여넣기를 해준다. 그리고 모든 파일을 overwriter해준다.
