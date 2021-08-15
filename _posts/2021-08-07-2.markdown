@@ -58,7 +58,7 @@ Jekyll은 정적 사이트 빌더(Static Website Builder)이다. Github 공동 �
 https://{username}.github.io/
 </p>
 <br/>
-<h3 id="ruby">Ruby Program & Jekyll 설치</h3>
+<h3 id="ruby">Ruby & Jekyll 설치</h3>
 <p>
 지킬(jekyll)은 루비로 제작되어있기 때문에 루비를 먼저 설치해야 한다.  루비는 인터프리터 형식으로 실행되는 언어이다.
 </p>
