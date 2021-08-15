@@ -23,6 +23,8 @@ categories: blog
 <a href="#post"><li>포스트 작성</li></a>
 <a href="#theme"><li>테마 적용</li></a>
 <a href="#deploy"><li>깃허브 배포</li></a>
+<a href="#GA"><li>구글 애널리틱스</li></a>
+<a href="#search-console"><li>구글 서치 콘솔</li></a>
 </ol>
 <hr>
 <h3>Overview</h3>
@@ -212,7 +214,7 @@ categories: {cat1} {cat2}
 <img src="https://user-images.githubusercontent.com/66561524/128624526-430d96aa-5076-4483-b65a-06a0adbb24d5.png">
 
 <p>
-Download ZIP을 클릭해준다. 그리고 그 폴더에 들어가서 전체 파일을 선택한뒤 복사해서 git clone을 한 로컬 디렉토리에서 붙여넣기를 해준다. 그리고 모든 파일을 overwriter해준다.
+Download ZIP을 클릭해준다. 그리고 그 폴더에 들어가서 전체 파일을 선택한뒤 복사해서 git clone을 한 로컬 디렉토리에서 붙여넣기를 해준다. 그리고 모든 파일을 overwrite 해준다.
 </p>
 
 ```
@@ -229,13 +231,130 @@ bundle exec jekyll serve
 마지막으로 깃푸시를 해주면 처음에 설정했던 주소에서 확인할 수 있다. (적용되는데 몇분이 걸리는 것 같다.) 원리는 잘 모르겠는데 바로 적용안되더라도 조금 기달려보자.
 </p>
 
+<h3 id="GA">구글 애널리틱스 연동</h3>
+<p>
+구글 애널리틱스는 블로그에 유입된 트래픽을 분석하는 툴이다. jekyll은 정적인 페이지를 제공하기 때문에 트래픽 유입 데이터를 쌓는데는 이렇게 분석 툴을 사용하는 것이 알맞을 것이다. 뿐만 아니라 GA는 숙련도에 따라서 효용가치가 높을뿐만 아니라 연동 방법이 간단하니 권장을 해드리고 싶은 도구다. 사실 데이터가 없으면 블로그 관리가 딱히 재미가 없다. 무슨 포스트가 인기가 있었는지 정도는 궁금할 것이다.
+</p>
+<p>
+<a href="https://analytics.google.com">Google Analytics</a>에 접속하여 회원가입을 해준다. 이후 블로그 url을 복사해서 설정을 해준다.
+</p>
+<br>
+<img src="https://user-images.githubusercontent.com/66561524/129470612-73279fd6-d11e-4d28-ad74-613c43a091e9.png"/>
+<p>
+연동을 완료하면 다음과 같은 화면이 나타난다. 중간에 있는 '새로운 온페이지 태그 추가'를 클릭하여 태그를 확인하고 복사한다. 이후에는 테마마다 조금씩 차이가 있을 수 있다.
+</p>
+<p>
+루트 디렉토리에 있는 _include 폴더에서 google-analytics.html을 생성해준다. 안의 내용 중간에 코드를 삽입한다.
+</p>
+
+```
+{% raw %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59DP1SECTE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-59DP1SECTE');
+</script>
+{% endraw %}
+```
+
+그리고 _include 폴더에 있는 head.html에 google-analytics.html을 삽입한다.
+<br>
+
+```
+{% include google-analytics.html %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+<title>{{ page.title | default: site.title }}</title>
+{% seo %}
+{% if site.plainwhite.dark_mode %}
+<script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
+{% endif %}
+```
+
+<p>
+연동은 이렇게 끝이다. 이제 자유롭게 사용하면 된다.
+</p>
+
+<img src="https://user-images.githubusercontent.com/66561524/129469892-beabc80b-352c-447e-be46-67471e079ac1.png"/>
+
+<h3 id="search-console">구글 서치콘솔 연동</h3>
+<h4>SEO?</h4>
+<p>
+글을 열심히 작성했을 때 그 글을 아무도 읽지 않아줬다는 사실만큼 슬픈 일이 없다. 아무리 공들인 글이라도 사람들의 유입이 없는 게시글은 점차 수명이 줄어든다. 네이버 블로그, 브런치, 티스토리는 기본적으로 SEO(Search Engine Optimization, 검색엔진최적화)를 제공하기 때문에 게시글이 자연스럽게 노출이 되었을 수 있다. 하지만 jekyll은 수동으로 설정해야할 필요가 있다.
+</p>
+<p>
+SEO는 다양한 방법이 있다. 구글은 정해진 조건에 따라 웹 페이지에 점수를 매기는데, 사이트 점수를 제외하면 70~80%가 tech 쪽 이슈라고 보면 된다. <strong>사이트 점수</strong>는 그동안의 트래픽을 누적해서 점수로 기록하며 점수가 높은 사이트에서 해당 웹 페이지를 올리거나 백링크(backlink)를 걸어 점수를 높일 수 있다. 백링크로 인해 바이럴 효과를 기대할 수 있다. <strong>tech</strong>는 기본적인 SEO 환경 제공, 웹 사이트 로딩 속도, meta 태그 사용 여부, url 키워드 및 길이 등 구글에서 제공한 기준을 바탕으로 개발이 되었는지를 주로 검사한다. 나머지 20~30%는 <strong>콘텐츠</strong>에 기반한다. 콘텐츠의 제목, 노출별 클릭, 콘텐츠 길이, 이탈율, 평균 콘텐츠 이용 시간 등의 기준이 있다.
+</p>
+<p>
+해외에서는 검색엔진 최적화가 검색엔진 마케팅만큼의 유입을 가져오기 때문에 기업별로 많은 연구를 하지만 국내에서는 네이버의 영향이 커서 그런지 아직 미미하다. 하지만 국내 이용자들의 구글 사용 빈도가 높아지면서 점점 SEO의 중요성이 커지고 있다. SEO의 가장 첫 시작은 웹 페이지 점수를 분석하는 구글의 크롤러에게 이 사이트의 존재를 알리는 것이다. 크롤러가 인식할 수 있는 페이지임을 알려주는 <u>robots.txt</u>와 사이트내 포스트의 주소를 맵핑해주는 <u>sitemap.xml</u>을 작성해주자.
+</p>
+<h4>구글 서치 콘솔</h4>
+<p>
+<a href="https://www.google.com/webmasters/tools/siteoverview?hl=ko">Google Search Consle</a>은 구글 검색을 통해서 들어온 키워드에 대한 인사이트를 제공해주는 도구이다. 어떤 키워드로 포스트가 노출이 되는지 확인이 될 수 있다. 개발자에게는 앞서 말한 sitemap을 수동으로 등록하여 구글 검색에 노출을 바로 등록하는 방법이다. 서치콘솔로 등록을 해주지 않으면 구글 크롤러가 전세계에 있는 콘텐츠를 뒤적거리다가 우리 콘텐를 빨리 만나기를 기다릴 수밖에 없을 것이다.
+</p>
+<p>
+구글 서치 콘솔로 접속하고 url을 입력하여 등록을 해준다. 이후 root directory로 이동하여 robots.txt를 작성해준다.
+</p>
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://eastperson.github.io/sitemap.xml
+```
+사이트맵도 작성해준다.
+
+```
+<pre><code>
+---
+layout : null
+---
+{%-if site.plainwhite.sitemap -%}
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        <url>
+            <loc>{{ site.url }}</loc>
+	    <lastmod>{{ 'now' | date_to_xmlschema }}</lastmod>
+            <priority>1.00</priority>
+        </url>
+        {%- for post in site.posts -%}
+            <url>
+                <loc>{{ site.url }}{{ post.url }}</loc>
+                <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+            </url>
+        {%- endfor -%}
+    </urlset>    
+{%- endif -%}
+</code></pre>
+```
+
+이제 깃허브에 다시 푸시해주고 난 후 아래에 제출해주고 며칠 기다리면 된다.
+
+<img src="https://user-images.githubusercontent.com/66561524/129470934-37c58b41-cc21-41ef-849a-b1727a35b5fb.png"/>
+
 <h3>Reference</h3>
 <ul>
 <li><a href="https://shryu8902.github.io/_posts/2018-06-22-jekyll-on-windows/">https://shryu8902.github.io/_posts/2018-06-22-jekyll-on-windows/</a></li>
 <li><a href="https://jetalog.net/86">https://jetalog.net/86</a></li>
 <li><a href="https://zeddios.tistory.com/1223">https://zeddios.tistory.com/1223</a></li>
+<li><a href="https://daehopark.tistory.com/entry/Jekyll-Google-Analytics-%EC%A0%81%EC%9A%A9">https://daehopark.tistory.com/entry/Jekyll-Google-Analytics-%EC%A0%81%EC%9A%A9</a></li>
+<li><a href="https://moon9342.github.io/jekyll-sitemap">https://moon9342.github.io/jekyll-sitemap</a></li>
+<li><a href="https://developers.google.com/search/docs/beginner/get-started">https://developers.google.com/search/docs/beginner/get-started</a></li>
 </ul>
-
 
 <hr>
 <h4>여담</h4>
